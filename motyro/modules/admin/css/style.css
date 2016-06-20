@@ -1,0 +1,8 @@
+label.module {
+	display: block;
+	background-color: #FFFFDD;
+	line-height: 3em;
+}
+#module-list {
+	background-color: rgb( 100,100,100 );
+}

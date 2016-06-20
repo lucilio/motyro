@@ -1,0 +1,32 @@
+<html>
+<head>
+	<title>{{ head.title }}</title>
+	{% for stylesheet in head.stylesheets %}
+	<link rel="stylesheet" type="text/css" href="{{stylesheet}}">
+	{% endfor %}
+</head>
+<body>
+	<header>
+		<figure id="logo">
+			<img src="{{ site.logo_url }}">
+		</figure>
+		<hgroup>
+			<h1>{{ site.name }}</h1>
+			<h2>{{ site.description }}</h2>
+		</hgroup>
+		<section class="header widget container">
+			{% for widget in widgets if 'header' in widget.places %}
+			<section id="{{ widget.id }}" class="widget item">
+			{% if widget.title %} <h4>{{ widget.title }}</h4> {% endif %}
+			<section>{{ widget.body }}</section>
+			{% endfor %}
+		</section>
+	</header>
+{% block content %}
+{% for section in sections %}
+<h3>{{ section.title }}</h3>
+{{ section.content }}
+{% endfor %}
+{% endblock %}
+</body>
+</html>

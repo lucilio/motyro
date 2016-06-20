@@ -1,0 +1,13 @@
+body {
+	font-family: "Roboto Slab"
+}
+figure#logo {
+	max-height: 150px;
+}
+figure#logo img {
+	height: 100px;
+}
+header{
+	display: flex;
+	justify-content: center;
+}

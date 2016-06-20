@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+{% block content %}
+<dl id="module-list">
+	{% for module in sections %}
+	<dt>{{ module.title }}</dt>
+	<dd>
+		{% for config in module.configs %}
+		{{ config.form }}
+		{% endfor %}
+	</dd>
+	{% endfor %}
+</dl>
+{% endblock %}
